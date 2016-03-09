@@ -1,0 +1,28 @@
+{
+  "name": "keystone-custom-fieldtypes",
+  "version": "0.1.0",
+  "description": "Allow adding custom fieldtypes to keystone project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadosh1000/keystone-custom-fieldtypes.git"
+  },
+  "keywords": [
+    "keystone",
+    "filedtypes",
+    "custom"
+  ],
+  "author": "Matan Kadosh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kadosh1000/keystone-custom-fieldtypes/issues"
+  },
+  "homepage": "https://github.com/kadosh1000/keystone-custom-fieldtypes#readme",
+  "dependencies": {
+    "fs-extra": "^0.26.5",
+    "path": "^0.12.7"
+  }
+}
