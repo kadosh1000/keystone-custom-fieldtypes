@@ -1,6 +1,3 @@
-/**
- */
- 
 var fs = require('fs-extra'),
 	path = require('path'),
 	keystonePath = 'node_modules'+path.sep+'keystone',
@@ -14,14 +11,19 @@ function copyTypesLibs(dirPath){
 	});
 	
 	typesDirs.forEach(function(dir){
-		var keystonePath = path.join(keystoneTypesDirPath, dir);
-		
+		var keystonePath = path.join(keystoneTypesDirPath, dir),
+			overwrite = true;
+
 		try{
 			stats = fs.statSync(keystonePath);
 			fs.removeSync(keystonePath)
-		}catch(err){}
+		}catch(err){
+			overwrite=false;
+		}
 	
 		fs.copySync(path.join(dirPath, dir), path.join(keystoneTypesDirPath, dir));
+
+		console.log((overwrite ? 'Overwrite ' : 'Added ')+'custom fieldType: ' + dir);
 	});
 }
 
@@ -55,7 +57,7 @@ function WriteLibFile(Types){
 
 	fs.writeFileSync(keystoneLibFieldTypesFile, fileText, 'utf8');
 
-	console.log('written!');
+	console.log('Updated: ' + keystoneLibFieldTypesFile);
 }
 
 function WriteAdminFile(Types){
@@ -72,7 +74,7 @@ function WriteAdminFile(Types){
 
 	fs.writeFileSync(keystoneAdminFieldsFile, fileText, 'utf8');
 
-	console.log('written 2!');
+	console.log('Updated: ' + keystoneAdminFieldsFile);
 }
  
 module.exports = {

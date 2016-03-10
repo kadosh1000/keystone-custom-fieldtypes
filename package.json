@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/kadosh1000/keystone-custom-fieldtypes#readme",
   "dependencies": {
-    "fs-extra": "^0.26.5",
-    "path": "^0.12.7"
+    "fs-extra": "^0.26.5"
   },
   "devDependencies": {
     "chai": "^3.5.0",
