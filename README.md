@@ -22,5 +22,5 @@ From your keystone project's root:
 > If no dir was specified, will try to load from '/fieldTypes'
 
 
-
-#### Pay Attention : using this module assumes that all the custom fields inside your custom fields dir are on current keystone's format. Use the same pattern as in keystone's `fields\types` dir. Give each of your types its own dir, `{field}Type.js` file and `{filed}Field.js` file
+### Warning:
+Pay Attention : using this module assumes that all the custom fields inside your custom fields dir are on current keystone's format. Use the same pattern as in keystone's `fields\types` dir. Give each of your types its own dir, `{field}Type.js` file and `{filed}Field.js` file
