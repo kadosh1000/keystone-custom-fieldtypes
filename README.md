@@ -1,4 +1,4 @@
-#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]  [![Dependency Status][daviddm-url]][daviddm-image]
 
 keystone-custom-fieldtypes
 ===========================
@@ -51,7 +51,8 @@ Pay Attention : using this module assumes that all the custom fields inside your
 [npm-image]: https://badge.fury.io/js/keystone-custom-fieldtypes.svg
 [travis-url]: https://travis-ci.org/kadosh1000/keystone-custom-fieldtypes
 [travis-image]: https://travis-ci.org/kadosh1000/keystone-custom-fieldtypes.svg?branch=master
-
+[daviddm-url]: https://david-dm.org/kadosh1000/keystone-custom-fieldtypes.svg?theme=shields.io
+[daviddm-image]: https://david-dm.org/kadosh1000/keystone-custom-fieldtypes.svg
 
 ## License
 MIT © kadosh1000
