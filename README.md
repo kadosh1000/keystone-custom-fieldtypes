@@ -26,7 +26,7 @@ In your project's keystone.js file before `keystone.init` call:
 > If no dir was specified, will try to load from '/fieldTypes'
 
 ### Example Dir Structure
-`
+``` ruby
 fieldTypes
     ├───custom
     │       CustomField.js
@@ -39,7 +39,7 @@ fieldTypes
     └───secondcustom
             SecondCustomField.js
             SecondCustomType.js
-`
+```
 
 Dir names not need to have any relavence to the actual type name (ex: `foo`)
 
