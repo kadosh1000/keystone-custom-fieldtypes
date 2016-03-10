@@ -34,3 +34,7 @@ Pay Attention : using this module assumes that all the custom fields inside your
 [npm-image]: https://badge.fury.io/js/keystone-custom-fieldtypes.svg
 [travis-url]: https://travis-ci.org/kadosh1000/keystone-custom-fieldtypes
 [travis-image]: https://travis-ci.org/kadosh1000/keystone-custom-fieldtypes.svg?branch=master
+
+
+## License
+MIT © kadosh1000
