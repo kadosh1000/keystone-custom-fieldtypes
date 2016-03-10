@@ -1,6 +1,6 @@
 {
   "name": "keystone-custom-fieldtypes",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Allow adding custom fieldtypes to keystone project",
   "main": "index.js",
   "scripts": {
