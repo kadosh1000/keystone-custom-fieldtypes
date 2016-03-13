@@ -5,7 +5,7 @@ keystone-custom-fieldtypes
 
 A minimal module copying custom keystone field types from any directory into keystone.
 
-Works on Keysyone 0.3.x
+Works on Keystone.js 0.3.x
 
 
 ## Installation
