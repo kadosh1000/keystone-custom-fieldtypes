@@ -1,6 +1,6 @@
 var fs = require('fs-extra'),
 	path = require('path'),
-	keystonePath = 'node_modules'+path.sep+'keystone',
+	keystonePath = path.join(module.parent.paths[0],'./keystone'),
 	keystoneTypesDirPath = path.join(keystonePath,'fields'+path.sep+'types'),
 	keystoneLibFieldTypesFile = path.join(keystonePath,'lib'+path.sep+'fieldTypes.js'),
 	keystoneAdminFieldsFile = path.join(keystonePath,'admin'+path.sep+'src'+path.sep+'fields.js');
