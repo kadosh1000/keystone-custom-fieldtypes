@@ -9,7 +9,7 @@ function copyTypesLibs(dirPath){
 	var typesDirs = fs.readdirSync(dirPath).filter(function(file) {
 		return fs.statSync(path.join(dirPath, file)).isDirectory();
 	});
-	
+
 	typesDirs.forEach(function(dir){
 		var keystonePath = path.join(keystoneTypesDirPath, dir),
 			overwrite = true;
@@ -20,7 +20,7 @@ function copyTypesLibs(dirPath){
 		}catch(err){
 			overwrite=false;
 		}
-	
+
 		fs.copySync(path.join(dirPath, dir), path.join(keystoneTypesDirPath, dir));
 
 		console.log((overwrite ? 'Overwrite ' : 'Added ')+'custom fieldType: ' + dir);
@@ -31,10 +31,11 @@ function GetAvailableTypes(){
 	return fs.readdirSync(keystoneTypesDirPath).filter(function(file) {
 		return fs.statSync(path.join(keystoneTypesDirPath, file)).isDirectory();
 	}).map(function(type){
-		var typeDirPath = path.join(keystoneTypesDirPath,type),
-			name = fs.readdirSync(path.join(typeDirPath)).filter(function(file) {
-				return fs.statSync(path.join(typeDirPath, file)).isFile();
-			})[0];
+		var typeDirPath = path.join(keystoneTypesDirPath,type);
+		var names = fs.readdirSync(path.join(typeDirPath)).filter(function(file) {
+			return fs.statSync(path.join(typeDirPath, file)).isFile();
+		});
+		var name = names.filter(function(n) { return n.indexOf('Field') !== -1; })[0];
 
 		return name ? {
 			Dir : type,
@@ -72,20 +73,21 @@ function WriteAdminFile(Types){
 
 	fileText += '};'
 
-	fs.writeFileSync(keystoneAdminFieldsFile, fileText, 'utf8');
-
-	console.log('Updated: ' + keystoneAdminFieldsFile);
+	try {
+		fs.writeFileSync(keystoneAdminFieldsFile, fileText, 'utf8');
+		console.log('Updated: ' + keystoneAdminFieldsFile);
+	} catch (error) {}
 }
- 
+
 module.exports = {
   loadFromDir: function(dirPath) {
-    
+
     dirPath = dirPath || 'fieldTypes';
-    
+
 	var stats = fs.statSync(dirPath);
 	if (!stats.isDirectory())
 		throw 'Path is not a directory';
-	
+
 	copyTypesLibs(dirPath);
 
 	var availableTypes = GetAvailableTypes()
